@@ -1,5 +1,3 @@
-export { default as TabsNav } from './tabs-nav';
-export { default as TabsPanel } from './tabs-panel';
-export { default as useTabsNav } from './hooks/use-tabs-nav';
-export * from './tabs-nav/props';
-export * from './tabs-panel/props';
+export { default as TantTabNav } from './tant-tab-nav';
+export * from './tant-tab-nav/props';
+// export * from './tant-tab-more/props';

@@ -73,10 +73,10 @@
     "stylelint": "^14.9.1"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.3.5",
-    "@douyinfe/semi-icons": "^2.55.1",
-    "@douyinfe/semi-ui": "^2.55.1",
     "@tant/icons": "^1.6.0",
+    "@tant/intl": "^0.2.0",
+    "@tant/ui-next": "^2.60.16",
+    "@xmzhou/rc-tabs": "^0.1.2",
     "ahooks": "^3.7.10",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",

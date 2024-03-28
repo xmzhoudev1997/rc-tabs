@@ -99,8 +99,8 @@ const Index = forwardRef<XM_TABS_NAV_SEMI_REF, XM_TABS_NAV_SEMI>((props, ref) =>
     return (
         <TabsNav
             tabList={tabList}
-            className={classNames(className, 'xm-tabs—nav-semi')}
-            tabClassName={classNames(tabClassName, 'xm-tab-semi')}
+            className={classNames(className, 'tant-tabs—nav')}
+            tabClassName={classNames(tabClassName, 'tant-tab')}
             tabContextMenuRender={defautltTabContextMenuRender}
             tabOperRender={defaultTabOperRender}
             tabTipRender={defaultTabTipRender}
