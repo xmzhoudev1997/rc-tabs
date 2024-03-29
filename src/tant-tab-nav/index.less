@@ -1,42 +1,127 @@
-.xm-tab-semi-close {
-    display: flex;
-    border-radius: 2px;
-    padding: 2px;
-    color: #7E7F80;
+.tant-tabs—nav {
+    height: 35px;
+    background-color: var(--tant-bg-gray-color-bg2-1);
 
-    &:hover {
-        background-color: #B9BECF33;
-    }
-}
-
-.xm-tab-semi-fixed,
-.xm-tab-semi-fixed-unsave,
-.xm-tab-semi-unsave {
-    display: flex;
-    border-radius: 2px;
-    padding: 2px;
-    color: #1E76F0;
-
-    &:hover {
-        background-color: #B9BECF33;
-    }
-}
-
-.xm-tab-semi-unsave-hover {
-    .xm-tab-semi-close {
-        display: none;
-    }
-    &:hover {
-        .xm-tab-semi-close {
-            display: flex;
+    .xm-tabs-bar {
+        .xm-tabs-scroll-left {
+            box-shadow: inset 10px 0 8px -8px rgba(10, 16, 50, 0.15);
         }
-        .xm-tab-semi-unsave {
-            display: none;
+    }
+
+    .xm-tabs-oper {
+        .xm-tabs-scroll-right {
+            box-shadow: inset -10px 0 8px -8px rgba(10, 16, 50, 0.15);
+        }
+
+        .xm-tabs-add,
+        .xm-tabs-more {
+            .tant-icon-span {
+                color: var(--tant-text-gray-color-text1-3);
+
+            }
+        }
+
+        .xm-tabs-split {
+            background-color: var(--tant-border-color-border1-1);
         }
     }
 }
-.xm-tab-semi-tooltip {
-    max-width: 300px;
-    min-width: 150px;
-    word-break: break-all;
+
+
+
+
+div.tant-tab {
+    background-color: var(--tant-fill-color-fill1-2);
+    border-bottom: 1px solid var(--tant-border-color-border1-1);
+    border-right: 1px solid var(--tant-border-color-border1-1);
+    box-sizing: content-box;
+    overflow: unset;
+
+    &:hover {
+        background-color: var(--tant-secondary-color-secondary-fill-hover);
+
+        .xm-tab-name {
+            color: var(--tant-text-gray-color-text1-2);
+        }
+
+        .xm-tab-oper {
+            .xm-tab-oper-shadow {
+                background: linear-gradient(90deg, rgba(249, 249, 251, 0.1) 5.88%, var(--tant-secondary-color-secondary-fill-hover) 100%);
+            }
+
+            .xm-tab-oper-shadow-active {
+                background: linear-gradient(90deg, rgba(249, 249, 251, 0.1) 5.88%, var(--tant-secondary-color-secondary-fill-hover) 100%);
+            }
+
+            .xm-tab-oper-bg,
+            .xm-tab-oper-bg-active,
+            .xm-tab-padding,
+            .xm-tab-padding-active {
+                background-color: var(--tant-secondary-color-secondary-fill-hover);
+            }
+        }
+    }
+
+    .xm-tab-icon {
+        color: var(--tant-primary-color-primary-default);
+        font-size: 16px;
+    }
+
+    .xm-tab-name {
+        color: var(--tant-text-gray-color-text1-3);
+        overflow: hidden;
+    }
+
+    .xm-tab-oper {
+        border-right: 1px solid var(--tant-border-color-border1-1);
+
+        .xm-tab-oper-shadow {
+            background: linear-gradient(90deg, rgba(249, 249, 251, 0.1) 5.88%, var(--tant-fill-color-fill1-2) 100%);
+        }
+
+        .xm-tab-oper-shadow-active {
+            background: linear-gradient(90deg, rgba(249, 249, 251, 0.1) 5.88%, var(--tant-bg-white-color-bg1-1) 100%);
+        }
+
+        .xm-tab-padding {
+            background-color: var(--tant-fill-color-fill1-2);
+        }
+
+        .xm-tab-padding-active,
+        .xm-tab-oper-bg-active {
+            background-color: var(--tant-bg-white-color-bg1-1);
+        }
+
+        .xm-tab-oper-bg {
+            background-color: var(--tant-fill-color-fill1-2);
+        }
+    }
+}
+
+div.tant-tab.xm-tab-active {
+    border-bottom: none;
+    background-color: var(--tant-bg-white-color-bg1-1);
+
+    &:hover {
+        background-color: var(--tant-bg-white-color-bg1-1);
+
+        .xm-tab-oper {
+            .xm-tab-oper-shadow-active {
+                background: linear-gradient(90deg, rgba(249, 249, 251, 0.25) 5.88%, var(--tant-bg-white-color-bg1-1) 100%);
+            }
+
+            .xm-tab-oper-bg-active,
+            .xm-tab-padding-active {
+                background-color: var(--tant-bg-white-color-bg1-1);
+            }
+        }
+    }
+
+    .xm-tab-name {
+        color: var(--tant-text-gray-color-text1-2);
+    }
+}
+
+div.tant-tab.xm-tab-dragging {
+    box-shadow: var(--tant-small-shadow-small-bottom);
 }

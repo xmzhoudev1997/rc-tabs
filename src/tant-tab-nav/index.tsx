@@ -1,111 +1,42 @@
-import React, { FC, forwardRef } from 'react';
+import React, { FC, forwardRef, ReactNode } from 'react';
 import './index.less';
 import useData from './hook';
-import { XM_TABS_NAV_SEMI, XM_TABS_NAV_SEMI_REF } from './props';
 import { TabsNav, XM_TAB } from '@xmzhou/rc-tabs';
 import classNames from 'classnames';
-import { Dropdown, Tooltip, Button, Popover } from '@douyinfe/semi-ui';
-import { IconChevronDown, IconPlus } from '@douyinfe/semi-icons';
-import { TaPin, TaClose, TaAdd1, TaPinUnsave, TaUnsave } from '@tant/icons';
+// import { Dropdown, Tooltip, Button, Popover } from '@douyinfe/semi-ui';
+// import { IconChevronDown, IconPlus } from '@douyinfe/semi-icons';
+// import { TaPin, TaClose, TaAdd1, TaPinUnsave, TaUnsave } from '@tant/icons';
+import { TABS_NAV, TABS_NAV_REF } from './props';
+import defaultTabContextMenuRender from '../default-render/tab-context-menu';
+import defaultTabAddRender from '../default-render/tab-add';
+import defaultTabOperRender from '../default-render/tab-oper';
+import defaultTabMoreRender from '../default-render/tab-more';
 
-
-const Index = forwardRef<XM_TABS_NAV_SEMI_REF, XM_TABS_NAV_SEMI>((props, ref) => {
+const Index = forwardRef<TABS_NAV_REF, TABS_NAV>((props, ref) => {
     const {
-        maxTabNum = 9999, className, tabList = [], tabClassName,
-        tabRender, tabContextMenuRender, tabOperRender, addRender, tabTipRender,
-        moreRender,
+        maxTabNum = 9999, className, tabList = [], tabClassName, tabContextMenus,
+        tabRender, tabContextMenuRender, tabOperRender, addRender,
+        moreRender, onTabAdd, tabKey, tabIconRender, onChange, dragDisabled = false,
+        tabTipRender,
         ...extraProps
     } = props;
     const {
-        contextOpen, setContextOpen, handleMoreContextMenuRender,
-        handleAdd, handleClose, handleTabContextMenuRender, handleFixed,
+        func,
     } = useData(props, ref);
-    const defautltTabContextMenuRender = (tab: XM_TAB, tabNode: React.ReactNode) => {
-        if (tabContextMenuRender) {
-            return tabContextMenuRender(tab, tabNode);
-        }
-        return (
-            <Dropdown
-                key={tab.key}
-                trigger="contextMenu"
-                menu={handleTabContextMenuRender(tab) as any}
-                visible={contextOpen === tab.key}
-                onVisibleChange={v => {
-                    setContextOpen(v ? tab.key : '')
-                }}
-            ><div>{tabNode}</div></Dropdown>
-        );
-    }
-
-    const defaultTabTipRender = (tab: XM_TAB, tabNode: React.ReactNode) => {
-        if (tabTipRender) {
-            return tabTipRender(tab, tabNode);
-        }
-        if (contextOpen !== tab.key) { // 垃圾semi当hover触发tooltip时visible不起作用
-            return (
-                <Tooltip
-                    position="bottomLeft"
-                    content={tab.label}
-                    mouseEnterDelay={500}
-                    mouseLeaveDelay={0}
-                    showArrow={false}
-                    className='xm-tab-semi-tooltip'
-                >{tabNode}</Tooltip>
-            );
-        }
-        return tabNode;
-
-    }
-    const defaultTabOperRender = (tab: XM_TAB) => {
-        if (tabOperRender) {
-            return tabOperRender(tab);
-        }
-        if (tab.fixed) {
-            if (tab.edited) {
-                return <TaPinUnsave className="xm-tab-semi-fixed-unsave" onClick={() => handleFixed(tab, false)} />;
-            }
-            return <TaPin className="xm-tab-semi-fixed" onClick={() => handleFixed(tab, false)} />;
-        }
-        if (tab.edited) {
-            if (!tab.closeable) {
-                return <TaUnsave className="xm-tab-semi-unsave" />;
-            }
-            return <div className="xm-tab-semi-unsave-hover">
-                <TaUnsave className="xm-tab-semi-unsave" />
-                <TaClose className="xm-tab-semi-close" onClick={() => handleClose(tab)} />
-            </div>
-        }
-        if (tab.closeable) {
-            return <TaClose className="xm-tab-semi-close" onClick={() => handleClose(tab)} />;
-        }
-        return null;
-    }
-    const defaultAddRender = () => {
-        if (addRender) {
-            return addRender();
-        }
-        return <Button onClick={handleAdd} icon={<IconPlus />} theme='borderless' type="tertiary" disabled={tabList.length >= maxTabNum} />
-    }
-    const defaultMoreRender = () => {
-        if (moreRender) {
-            return moreRender();
-        }
-        return <Dropdown
-            trigger="click"
-            position="bottomRight"
-            content={<div>124</div>}
-        ><div><Button icon={<IconChevronDown />} theme='borderless' type="tertiary" /></div></Dropdown>
-    }
     return (
         <TabsNav
+            tabKey={tabKey}
             tabList={tabList}
             className={classNames(className, 'tant-tabs—nav')}
             tabClassName={classNames(tabClassName, 'tant-tab')}
-            tabContextMenuRender={defautltTabContextMenuRender}
-            tabOperRender={defaultTabOperRender}
-            tabTipRender={defaultTabTipRender}
-            addRender={defaultAddRender}
-            moreRender={defaultMoreRender}
+            tabContextMenuRender={tabContextMenuRender || ((tab: XM_TAB, tabNode: ReactNode) => defaultTabContextMenuRender(tab, tabNode, func, tabContextMenus, tabTipRender as any))}
+            tabOperRender={tabOperRender || ((tab: XM_TAB) => defaultTabOperRender(tab, func))}
+            addRender={addRender || (() => defaultTabAddRender(func, onTabAdd, tabList?.length >= maxTabNum))}
+            moreRender={moreRender || (() => defaultTabMoreRender(func, tabList, tabKey || '', tabIconRender, tabRender, dragDisabled, onChange))}
+            tabIconRender={tabIconRender}
+            tabRender={tabRender}
+            onChange={onChange}
+            dragDisabled={dragDisabled}
             {...extraProps}
         />
     );

@@ -1,4 +1,5 @@
 import { XM_TABS_NAV, XM_TAB, XM_TABS_PANEL_REF } from '@xmzhou/rc-tabs';
+import { ReactNode } from 'react';
 
 export interface TABS_NAV_REF {
     update: (tabKey: XM_TAB['key'], params: Partial<XM_TAB>) => void | Promise<void>,
@@ -12,11 +13,12 @@ export interface TABS_NAV_REF {
     edited: (tabKey: XM_TAB['key'], edited: boolean) => void | Promise<void>,
 }
 
-export type TABS_NAV_CONTEXT_MENU = 'fixed' | 'close' | 'close_all' | 'close_other' | 'close_right' | 'close_save';
+export type TABS_NAV_CONTEXT_MENU_KEY = 'fixed' | 'close' | 'close_all' | 'close_other' | 'close_right' | 'close_save';
+export type TABS_NAV_CONTEXT_MENU = { key: TABS_NAV_CONTEXT_MENU_KEY, label: ReactNode } | { type: 'divider' }
 
 export interface TABS_NAV extends XM_TABS_NAV {
     maxTabNum?: number;
-    contextMenus?: TABS_NAV_CONTEXT_MENU[];
+    tabContextMenus?: (tab: XM_TAB) => TABS_NAV_CONTEXT_MENU[];
     onTabAdd?: () => XM_TAB | Promise<XM_TAB>;
     onTabClose?: (tab: XM_TAB) => boolean | Promise<boolean>;
     panel?: XM_TABS_PANEL_REF,

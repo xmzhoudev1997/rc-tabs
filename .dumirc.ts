@@ -3,6 +3,8 @@ import { defineConfig } from 'dumi';
 export default defineConfig({
   outputPath: 'dist',
   themeConfig: {
-    name: 'rc-tabs',
+    name: '@tant-tabs',
   },
+  hash: true,
+  history: {type: 'hash',},
 });
