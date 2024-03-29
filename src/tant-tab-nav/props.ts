@@ -13,7 +13,7 @@ export interface TABS_NAV_REF {
     edited: (tabKey: XM_TAB['key'], edited: boolean) => void | Promise<void>,
 }
 
-export type TABS_NAV_CONTEXT_MENU_KEY = 'fixed' | 'close' | 'close_all' | 'close_other' | 'close_right' | 'close_save';
+export type TABS_NAV_CONTEXT_MENU_KEY = 'fixed' | 'close' | 'close-all' | 'close-other' | 'close-right' | 'close-save';
 export type TABS_NAV_CONTEXT_MENU = { key: TABS_NAV_CONTEXT_MENU_KEY, label: ReactNode } | { type: 'divider' }
 
 export interface TABS_NAV extends XM_TABS_NAV {
