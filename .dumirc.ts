@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  outputPath: 'dist',
+  outputPath: 'tant-tabs',
   themeConfig: {
     name: 'tant-tabs',
   },
