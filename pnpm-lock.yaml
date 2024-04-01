@@ -15,8 +15,8 @@ dependencies:
     specifier: ^2.60.16
     version: 2.60.16(@babel/core@7.24.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
   '@xmzhou/rc-tabs':
-    specifier: ^0.1.2
-    version: 0.1.2(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.1.3
+    version: 0.1.3(react-dom@18.2.0)(react@18.2.0)
   ahooks:
     specifier: ^3.7.10
     version: 3.7.10(react@18.2.0)
@@ -4429,8 +4429,8 @@ packages:
       '@xtuc/long': 4.2.2
     dev: true
 
-  /@xmzhou/rc-tabs@0.1.2(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-V3VbMxP4rPPXvPND3eDK0zeUbWIZiba/hHgDL07Z+bvNUAZyhPh25TQwqmKYurO0cyiTj5+YqDurdWt/QYciHQ==}
+  /@xmzhou/rc-tabs@0.1.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-YR1hKhnQORWBu/kqpNo8C0fpV/eyydx8iIPDdip9H8/LFc1V5yymiFK0Qh/pv6hIiXraDQeNwa7nKiN+ZqSfsg==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
