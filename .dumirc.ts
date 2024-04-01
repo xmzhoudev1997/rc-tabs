@@ -8,4 +8,5 @@ export default defineConfig({
   publicPath: process.env.NODE_ENV === 'development' ? '/' : '/rc-tabs/tant-tabs/',
   hash: true,
   history: {type: 'hash',},
+  styles: ['https://td-fe.github.io/figma-tokens/variables.css'],
 });
