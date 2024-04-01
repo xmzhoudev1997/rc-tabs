@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_tant_tabs=self.webpackChunk_tant_tabs||[]).push([[9],{67461:function(v,t,e){e.r(t),e.d(t,{default:function(){return s}});var n=e(24906),o=e(50959),r=function(){var u=(0,n.UO)(),d=u.id,m=(0,n.WF)(),c=m.demos,f=c[d]||{},a=f.component;return a&&(0,o.createElement)(a)},s=r}}]);
