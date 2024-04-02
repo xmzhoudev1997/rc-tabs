@@ -1,7 +1,7 @@
 import React, { FC, forwardRef, ReactNode } from 'react';
 import './index.less';
 import useData from './hook';
-import { TabsNav, XM_TAB } from '@xmzhou/rc-tabs';
+import { TabsNav, XM_TAB } from '@tant/rc-tabs';
 import classNames from 'classnames';
 // import { Dropdown, Tooltip, Button, Popover } from '@douyinfe/semi-ui';
 // import { IconChevronDown, IconPlus } from '@douyinfe/semi-icons';

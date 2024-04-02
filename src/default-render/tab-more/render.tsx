@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { Dropdown, Button, Search, Empty } from '@tant/ui-next';
 import React, { FC } from 'react';
-import { XM_TAB } from '@xmzhou/rc-tabs';
+import { XM_TAB } from '@tant/rc-tabs';
 import useData from './hook';
 import './index.less';
 import { TaArrowDown, TaDrag } from '@tant/icons';

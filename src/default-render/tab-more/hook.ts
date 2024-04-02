@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { XM_TAB } from '@xmzhou/rc-tabs';
+import { XM_TAB } from '@tant/rc-tabs';
 import { useMemo } from "react";
 import pinyinMatch from 'pinyin-match';
 import { TABS_NAV } from '.././../tant-tab-nav/props';

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { XM_TAB } from '@xmzhou/rc-tabs';
+import { XM_TAB } from '@tant/rc-tabs';
 import { TABS_NAV_REF } from ".././../tant-tab-nav/props";
 
 export default (

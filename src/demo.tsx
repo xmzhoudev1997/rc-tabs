@@ -1,11 +1,11 @@
 
 // @ts-nocheck
-import { TabsPanel } from '@xmzhou/rc-tabs';
+import { TabsPanel } from '@tant/rc-tabs';
 import React, { useEffect, useRef } from 'react';
 import { useSetState } from 'ahooks';
 import { TaLanguage } from '@tant/icons';
 import { TantTabNav } from '@tant/tabs';
-import { XM_TAB } from '@xmzhou/rc-tabs';
+import { XM_TAB } from '@tant/rc-tabs';
 export default () => {
     const [state, setState] = useSetState<any>({
         tabList: [],

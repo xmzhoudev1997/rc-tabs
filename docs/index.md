@@ -2,7 +2,7 @@
 
 <font color="red">此包是@tant私有包，部署在私有镜像上，非数数科技员工不能使用</font>
 
-组件是`@xmzhou/rc-tabs`的上层封装，底层接口可以点击[这里](https://xmzhoudev1997.github.io/rc-tabs/rc-tabs)
+组件是`@tant/rc-tabs`的上层封装，底层接口可以点击[这里](https://xmzhoudev1997.github.io/rc-tabs/rc-tabs)
 
 
 ## 安装

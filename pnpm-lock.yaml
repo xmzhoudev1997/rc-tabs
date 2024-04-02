@@ -11,12 +11,12 @@ dependencies:
   '@tant/intl':
     specifier: ^0.2.0
     version: 0.2.0(typescript@5.4.2)
+  '@tant/rc-tabs':
+    specifier: ^0.1.4
+    version: 0.1.4(react-dom@18.2.0)(react@18.2.0)
   '@tant/ui-next':
     specifier: ^2.60.16
     version: 2.60.16(@babel/core@7.24.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
-  '@xmzhou/rc-tabs':
-    specifier: ^0.1.4
-    version: 0.1.4(react-dom@18.2.0)(react@18.2.0)
   ahooks:
     specifier: ^3.7.10
     version: 3.7.10(react@18.2.0)
@@ -3224,6 +3224,22 @@ packages:
       - typescript
     dev: false
 
+  /@tant/rc-tabs@0.1.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-mzG3YMui26Gi5VcIwnL74wOeyKZdtE40ZOUgg8Z6qBadPtllrmlihqhh/KNVmRcx5ZguF441wL2aph0i84exGQ==}
+    peerDependencies:
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      ahooks: 3.7.10(react@18.2.0)
+      classnames: 2.5.1
+      lodash: 4.17.21
+      react: 18.2.0
+      react-beautiful-dnd: 13.1.1(react-dom@18.2.0)(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - react-native
+    dev: false
+
   /@tant/ui-next@2.60.16(@babel/core@7.24.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Xy38agREuSRxJTvTt6wVxw5+iZKquvnaIHzNQ9IMmGIDqMCW0Me4ZA5XjLjbMizmCdi80JxJiCRG8sEOmWppcw==}
     engines: {node: '>=12.0.0'}
@@ -4277,22 +4293,6 @@ packages:
       '@webassemblyjs/ast': 1.12.1
       '@xtuc/long': 4.2.2
     dev: true
-
-  /@xmzhou/rc-tabs@0.1.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-idGPDuhksIQBYK68pWer2rqs8/MpV+2my95y06Q0ADfQK1n/B4O0cAiald46X/uzuFpspiM6O485M4XPyCB0Tw==}
-    peerDependencies:
-      react: '>=16.9.0'
-      react-dom: '>=16.9.0'
-    dependencies:
-      ahooks: 3.7.10(react@18.2.0)
-      classnames: 2.5.1
-      lodash: 4.17.21
-      react: 18.2.0
-      react-beautiful-dnd: 13.1.1(react-dom@18.2.0)(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - react-native
-    dev: false
 
   /@xtuc/ieee754@1.2.0:
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}

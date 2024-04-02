@@ -1,6 +1,6 @@
 {
   "name": "@tant/tabs",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "一个基于React的标签页管理工具",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -76,7 +76,7 @@
     "@tant/icons": "^1.6.0",
     "@tant/intl": "^0.2.0",
     "@tant/ui-next": "^2.60.16",
-    "@xmzhou/rc-tabs": "^0.1.4",
+    "@tant/rc-tabs": "^0.1.4",
     "ahooks": "^3.7.10",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",

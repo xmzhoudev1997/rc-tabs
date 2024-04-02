@@ -1,4 +1,4 @@
-import { XM_TAB, useTabsNav } from "@xmzhou/rc-tabs";
+import { XM_TAB, useTabsNav } from "@tant/rc-tabs";
 import { TABS_NAV, TABS_NAV_REF } from "./props";
 import { useImperativeHandle, useState } from "react";
 

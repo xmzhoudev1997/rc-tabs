@@ -1,4 +1,4 @@
-import { XM_TAB } from '@xmzhou/rc-tabs';
+import { XM_TAB } from '@tant/rc-tabs';
 import Render from './render';
 import React, { ReactNode } from 'react';
 import { TABS_NAV, TABS_NAV_REF } from '.././../tant-tab-nav/props';

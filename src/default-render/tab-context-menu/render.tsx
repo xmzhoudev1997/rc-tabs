@@ -1,6 +1,6 @@
 import { Dropdown, Tooltip } from '@tant/ui-next';
 import React, { FC, ReactNode } from 'react';
-import { XM_TAB } from '@xmzhou/rc-tabs';
+import { XM_TAB } from '@tant/rc-tabs';
 import useData from './hook';
 import { TABS_NAV, TABS_NAV_REF } from '.././../tant-tab-nav/props';
 import './index.less';

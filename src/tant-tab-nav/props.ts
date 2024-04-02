@@ -1,4 +1,4 @@
-import { XM_TABS_NAV, XM_TAB, XM_TABS_PANEL_REF } from '@xmzhou/rc-tabs';
+import { XM_TABS_NAV, XM_TAB, XM_TABS_PANEL_REF } from '@tant/rc-tabs';
 import { ReactNode } from 'react';
 
 export interface TABS_NAV_REF {

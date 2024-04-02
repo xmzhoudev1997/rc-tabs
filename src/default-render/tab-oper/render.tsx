@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { TABS_NAV_REF } from '.././../tant-tab-nav/props';
-import { XM_TAB } from '@xmzhou/rc-tabs';
+import { XM_TAB } from '@tant/rc-tabs';
 import { TaClose, TaPin, TaPinUnsave, TaUnsave } from '@tant/icons';
 import './index.less';
 
