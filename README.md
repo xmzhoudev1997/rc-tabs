@@ -7,7 +7,7 @@
 
 ## 安装
 ``` shell
-npm instal @tant/tant-tabs
+npm instal @tant/tabs
 ```
 ## API
 更多API请查看[这里](https://xmzhoudev1997.github.io/rc-tabs/rc-tabs)

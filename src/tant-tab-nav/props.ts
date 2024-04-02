@@ -21,6 +21,6 @@ export interface TABS_NAV extends XM_TABS_NAV {
     tabContextMenus?: (tab: XM_TAB) => TABS_NAV_CONTEXT_MENU[];
     onTabAdd?: () => XM_TAB | Promise<XM_TAB>;
     onTabClose?: (tab: XM_TAB) => boolean | Promise<boolean>;
-    panel?: XM_TABS_PANEL_REF,
+    panel?: React.MutableRefObject<XM_TABS_PANEL_REF>,
     ref?:  TABS_NAV_REF,
   }

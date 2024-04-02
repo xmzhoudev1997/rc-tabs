@@ -1,12 +1,12 @@
 import { XM_TAB, useTabsNav } from "@tant/rc-tabs";
 import { TABS_NAV, TABS_NAV_REF } from "./props";
-import { useImperativeHandle, useState } from "react";
+import { useImperativeHandle } from "react";
 
 
 export default (props: TABS_NAV, ref:  React.ForwardedRef<TABS_NAV_REF>) => {
     const {
         tabKey, tabList, panel,
-        onTabAdd, onTabClose = () => true, onChange = () => { },
+        onTabClose = () => true, onChange = () => { },
     } = props;
     const navFunc = useTabsNav(tabKey || '', tabList, onChange, panel)
     const func = {

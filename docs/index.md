@@ -7,7 +7,7 @@
 
 ## 安装
 ``` shell
-npm instal @tant/tant-tabs
+npm instal @tant/tabs
 ```
 
 ## 示例

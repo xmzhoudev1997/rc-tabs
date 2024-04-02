@@ -92,12 +92,13 @@ export default () => {
                     </>
                 }}
                 ref={navRef}
-                panel={panelRef.current}
+                panel={panelRef}
             />
             <TabsPanel
                 ref={panelRef}
             >
                 {(tabKey: string) => {
+                    console.log(tabKey);
                     const tab = state.tabList.find(t => t.key === tabKey);
                     return <div
                         style={{ height: '100%' }}

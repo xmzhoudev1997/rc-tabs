@@ -12,8 +12,8 @@ dependencies:
     specifier: ^0.2.0
     version: 0.2.0(typescript@5.4.2)
   '@tant/rc-tabs':
-    specifier: ^0.1.4
-    version: 0.1.4(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.1.5
+    version: 0.1.5(react-dom@18.2.0)(react@18.2.0)
   '@tant/ui-next':
     specifier: ^2.60.16
     version: 2.60.16(@babel/core@7.24.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
@@ -3224,8 +3224,8 @@ packages:
       - typescript
     dev: false
 
-  /@tant/rc-tabs@0.1.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-mzG3YMui26Gi5VcIwnL74wOeyKZdtE40ZOUgg8Z6qBadPtllrmlihqhh/KNVmRcx5ZguF441wL2aph0i84exGQ==}
+  /@tant/rc-tabs@0.1.5(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-ro+Bpw8z9YXNWv7HeGJaKMlmIJmKQBKs5+7vb9vPdBes+Ll0MuKyWfk9ww7Wy6iU0MQ1MtTYeOoUyFulUq7Iww==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
