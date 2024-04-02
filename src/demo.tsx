@@ -8,8 +8,11 @@ import { TantTabNav } from '@tant/tabs';
 import { XM_TAB } from '@tant/rc-tabs';
 export default () => {
     const [state, setState] = useSetState<any>({
-        tabList: [],
-        tabKey: '',
+        tabList: [{
+            key: '1',
+            label: '1',
+        }],
+        tabKey: '1',
     });
     const panelRef = useRef<any>(null);
     const navRef = useRef<any>(null);
