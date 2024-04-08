@@ -16,7 +16,7 @@ const Index = forwardRef<XM_TABS_PANEL_REF, Omit<XM_TABS_PANEL, 'ref'>>((props, 
       'xm-tabs-panels',
     )}>
       {
-        list.map(d => {
+        list?.length ? list.map(d => {
           return <div
             key={d.tabKey}
             className={classnames(
@@ -26,7 +26,8 @@ const Index = forwardRef<XM_TABS_PANEL_REF, Omit<XM_TABS_PANEL, 'ref'>>((props, 
           >
             {children(d.tabKey, d.data, handleUpdate)}
           </div>;
-        })
+        }) :
+        children('', undefined, () => {})
       }
     </div>
   );
