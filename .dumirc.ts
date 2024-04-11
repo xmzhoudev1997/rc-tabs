@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  outputPath: 'rc-tabs',
+  outputPath: 'dist',
   themeConfig: {
     name: 'rc-tabs',
   },

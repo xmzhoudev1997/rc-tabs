@@ -1,6 +1,6 @@
 {
   "name": "@xmzhou/rc-tabs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "一个基于React的标签页管理工具",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,7 +27,7 @@
       "@commitlint/config-conventional"
     ]
   },
-  "homepage": "https://xmzhoudev1997.github.io/rc-tabs/docs-dist/index.html",
+  "homepage": "https://xmzhoudev1997.github.io/rc-tabs/dist/index.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/xmzhoudev1997/rc-tabs"
@@ -80,11 +80,6 @@
   },
   "dependencies": {
     "ahooks": "^3.7.10",
-    "classnames": "^2.5.1",
-    "lodash": "^4.17.21",
-    "react-beautiful-dnd": "^13.1.1",
-    "react-sortable-hoc": "^2.0.0",
-    "react-sortablejs": "^6.1.4",
-    "sortablejs": "^1.15.2"
+    "classnames": "^2.5.1"
   }
 }
