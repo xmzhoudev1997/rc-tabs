@@ -1,36 +1,44 @@
-import React, { forwardRef } from "react";
-import { XM_TABS_PANEL, XM_TABS_PANEL_REF } from "./props";
+import React, { FC } from "react";
+import { RC_TABS_PANEL } from "./props";
 import './index.less';
 import classnames from 'classnames';
 import useData from './hook';
-const Index = forwardRef<XM_TABS_PANEL_REF, Omit<XM_TABS_PANEL, 'ref'>>((props, ref) => {
+const Index: FC<RC_TABS_PANEL> = (props) => {
   const {
-    children,
+    children, tabKey,
   } = props;
   const {
-    list, tabKey, handleUpdate,
-  } = useData(props, ref);
+    list,
+  } = useData(props);
 
   return (
     <div className={classnames(
-      'xm-tabs-panels',
+      'rc-tabs-panels',
     )}>
       {
         list?.length ? list.map(d => {
           return <div
-            key={d.tabKey}
+            key={d.key}
             className={classnames(
-              'xm-tabs-panel',
-              tabKey === d.tabKey ? 'xm-tabs-panel-active' : ''
+              'rc-tabs-panel',
+              tabKey === d.key ? 'rc-tabs-panel-active' : ''
             )}
           >
-            {children(d.tabKey, d.data, handleUpdate)}
+            {children(d.key, d.tab)}
           </div>;
         }) :
-        children('', undefined, () => {})
+          <div
+            key="-1"
+            className={classnames(
+              'rc-tabs-panel',
+              'rc-tabs-panel-active',
+            )}
+          >
+            {children('', undefined)}
+          </div>
       }
     </div>
   );
-});
+};
 
 export default Index;

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 
-export interface XM_TAB {
+export interface RC_TAB {
   /**
    * 标签的唯一标识
    */
@@ -22,18 +22,22 @@ export interface XM_TAB {
    * 标签是否已编辑
    */
   edited?: boolean;
+  /**
+   * 标签最后打开时间
+   */
+  _openTime?: number;
   [k: string]: any;
 }
 
-export  interface XM_TABS_NAV {
+export  interface RC_TABS_NAV {
   /**
    * 当前活动标签key，需要唯一
    */
-  tabKey?: XM_TAB['key'],
+  tabKey?: RC_TAB['key'],
   /**
    * 标签列表
    */
-  tabList: XM_TAB[],
+  tabList: RC_TAB[],
   /**
    * 组件样式
    */
@@ -51,56 +55,42 @@ export  interface XM_TABS_NAV {
    */
   minTabWidth?: number;
   /**
-   * 禁止标签拖拽
-   */
-  dragDisabled?: boolean;
-  /**
-   * 自定义标签渲染函数
-   * @param tab 
-   * @returns 
-   */
-  tabRender?: (tab: XM_TAB) => ReactNode;
-  /**
    * 自定义渲染标签添加
    * @returns 
    */
-  addRender?: () => ReactNode;
+  addNode?: ReactNode;
   /**
    * 自定义渲染更多内容
    * @returns 
    */
-  moreRender?: () => ReactNode;
+  moreNode?: ReactNode;
   /**
    * 自定义渲染标签页右侧内容
    * @returns 
    */
-  extraRender?: () => ReactNode;
+  extraNode?: ReactNode;
+  /**
+   * tab标签支持拖拽
+   */
+  tabDrag?: boolean;
+  /**
+   * 拖拽动画，设置''即关闭动画
+     * @default 'all 400ms linear(0, 0, 1, 1) 0s'
+   */
+  dragTransition?: string;
   /**
    * 自定义渲染标签操作部分
    * @returns 
    */
-  tabOperRender?: (tab: XM_TAB) => ReactNode;
- 
+  tabRender?: (tab: RC_TAB, node: ReactNode) => ReactNode;
   /**
-   * 自定义渲染标签右击下拉组件
+   * 点击tab切换时触发
    * @returns 
    */
-  tabContextMenuRender?: (tab: XM_TAB, tabNode: ReactNode) => ReactNode;
+  onTabKeyChange?: (tabKey: RC_TAB['key'] | undefined) => void;
   /**
-   * 渲染标签前面的图标
-   * @param tab 
+   * 拖拽后触发，需要设置`tabDrag`=true才有效
    * @returns 
    */
-  tabIconRender?: (tab: XM_TAB) => ReactNode;
-  /**
-   * 渲染标签的悬浮信息
-   * @param tab 
-   * @returns 
-   */
-  tabTipRender?: (tab: XM_TAB, tabNode: ReactNode) => ReactNode;
-  /**
-   * 数据变动时触发，提供最新选中标签key和列表
-   * @returns 
-   */
-  onChange?: (tabKey: XM_TAB['key'] | undefined, tabList: XM_TAB[]) => void;
+  onDrag?: (oldIndex: number, newIndex: number) => void;
 }

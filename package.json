@@ -1,6 +1,6 @@
 {
   "name": "@xmzhou/rc-tabs",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "一个基于React的标签页管理工具",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -64,6 +64,7 @@
     "@types/react": "^18.0.0",
     "@types/react-beautiful-dnd": "^13.1.8",
     "@types/react-dom": "^18.0.0",
+    "@types/sortablejs": "^1.15.8",
     "@umijs/lint": "^4.0.0",
     "dumi": "^2.2.0",
     "eslint": "^8.23.0",
@@ -81,6 +82,9 @@
     "ahooks": "^3.7.10",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",
-    "react-beautiful-dnd": "^13.1.1"
+    "react-beautiful-dnd": "^13.1.1",
+    "react-sortable-hoc": "^2.0.0",
+    "react-sortablejs": "^6.1.4",
+    "sortablejs": "^1.15.2"
   }
 }

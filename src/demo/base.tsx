@@ -1,7 +1,8 @@
 // @ts-nocheck
-import { TabsNav, TabsPanel, useTabsNav } from '@xmzhou/rc-tabs';
-import React, { useRef } from 'react';
+import { RcTabsNav, RcTabsPanel } from '@xmzhou/rc-tabs';
+import React from 'react';
 import { useSetState } from 'ahooks';
+import { RC_TAB } from 'xm-tabs/tabs-nav/props';
 export default () => {
   const [state, setState] = useSetState<any>({
     tabList: [{
@@ -44,34 +45,94 @@ export default () => {
       label: '标签页4',
       closeable: true,
       fixed: true,
-    },],
+    },
+    {
+      key: '83',
+      label: '标签页8',
+      closeable: true,
+    },
+    {
+      key: '81',
+      label: '标签页81',
+      closeable: true,
+    },
+    {
+      key: '82',
+      label: '标签页82',
+      closeable: true,
+    },
+    {
+      key: '84',
+      label: '标签页84',
+      closeable: true,
+    },
+    {
+      key: '85',
+      label: '标签页85',
+      closeable: true,
+    },
+    {
+      key: '841',
+      label: '标签页841',
+      closeable: true,
+    },
+    {
+      key: '852',
+      label: '标签页852',
+      closeable: true,
+    },
+    {
+      key: '843',
+      label: '标签页843',
+      closeable: true,
+    },
+    {
+      key: '854',
+      label: '标签页854',
+      closeable: true,
+    },
+    ],
     tabKey: '1',
   });
-  const panelRef = useRef<any>(null);
-  useTabsNav(state.tabKey, state.tabList, (key: any, list: any) => setState({ tabKey: key, tabList: list }), panelRef);
   return (
     <div style={{
       display: 'flex',
       height: 400,
       flexDirection: 'column',
     }}>
-      <TabsNav
+      <RcTabsNav
         tabKey={state.tabKey}
         tabList={state.tabList}
-        onChange={(tabKey: any, tabList: any) => {
-          setState({ tabKey, tabList });
+        onTabKeyChange={(tabKey: string) => {
+          setState({ tabKey });
         }}
-        panel={panelRef.current}
-        addRender={() => 1234}
+        dragTransition={''}
+        onDrag={(sourceIndex, targetIndex) => {
+          const sourceTab = state.tabList[sourceIndex];
+          const targetTab = state.tabList[targetIndex];
+          if (!sourceTab || !targetTab) {
+            return;
+          }
+          state.tabList.splice(sourceIndex, 1);
+          state.tabList.splice(targetIndex, 0, sourceTab);
+          if (sourceTab.fixed && state.tabList[targetIndex - 1]) {
+            targetTab.fixed = state.tabList[targetIndex - 1].fixed;
+          }
+          if (!sourceTab.fixed && state.tabList[targetIndex + 1]) {
+            targetTab.fixed = state.tabList[targetIndex + 1].fixed;
+          }
+          setState({ tabList: [...state.tabList] });
+        }}
+        tabDrag
       />
-      <TabsPanel
-        ref={panelRef}
+      <RcTabsPanel
+        tabKey={state.tabKey}
+        tabList={state.tabList}
       >
-        {(tabKey: any, data: any, handleUpdate: any) => {
-          const tab = state.tabList.find((t: any) => t.key === tabKey);
-          return <div style={{ height: '100%' }}  suppressContentEditableWarning contentEditable >{tab?.label}</div>;
-        }} 
-      </TabsPanel>
+        {(tabKey: RC_TAB['key'], tab: RC_TAB) => {
+          return <div style={{ height: '100%' }} suppressContentEditableWarning contentEditable >{tab?.label}</div>;
+        }}
+      </RcTabsPanel>
     </div>
   );
 }

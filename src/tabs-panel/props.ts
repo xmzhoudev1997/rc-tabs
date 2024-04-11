@@ -1,13 +1,8 @@
 import { ReactNode } from "react";
-import { XM_TAB } from "../tabs-nav/props";
+import { RC_TAB } from "../tabs-nav/props";
 
-export interface XM_TABS_PANEL_REF {
-  update: (tabKey: XM_TAB['key'], data: any) => void;
-  open: (tabKey: XM_TAB['key'], tab?: XM_TAB) => void;
-  close: (tabKey: XM_TAB['key']) => void;
-}
 
-export interface XM_TABS_PANEL {
+export interface RC_TABS_PANEL {
   /**
    * 标签缓存数量，超过的将被清除dom
    */
@@ -19,23 +14,14 @@ export interface XM_TABS_PANEL {
   /**
    * 子元素
    */
-  children: (tabKey: XM_TAB['key'], data: any, hanleChange: (tabKey: XM_TAB['key'], data: any) => void | Promise<void>) => ReactNode;
+  children: (tabKey: RC_TAB['key'], tab?: RC_TAB) => ReactNode;
+  
   /**
-   * 修改标签内容修改时触发
-   * @param tabKey 
-   * @param data 
-   * @returns 
+   * 当前活动标签key，需要唯一
    */
-  onChange?: (tabKey: XM_TAB['key'], data: any, isClose?: boolean) => void | Promise<void>;
+  tabKey?: RC_TAB['key'],
   /**
-   * 切换标签或标签内容修改时触发
-   * @param tabKey 
-   * @param data 
-   * @returns
+   * 标签列表
    */
-  onInit?: (tabKey: XM_TAB['key'], tab: XM_TAB) => any | Promise<any>;
-  /**
-   * 内部缓存数据及操作函数
-   */
-  ref: XM_TABS_PANEL_REF,
+  tabList: RC_TAB[],
 }
